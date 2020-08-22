@@ -1,32 +1,32 @@
 import {
-	executeCommand,
-	registerCommand,
-	registerOverride
+    executeCommand,
+    registerCommand,
+    registerOverride
 } from "ez:command";
 
 import {
-	send
+    send
 } from "ez:formui";
 
 registerCommand("customserverchooser", "Open /transferserver GUI", 0);
 registerOverride("customserverchooser", [], function () {
-	if (this.player) {
-		send(this.player, {
-			type: "custom_form",
-			title: "§l§aCustom Server Chooser",
-			content: [
-				{
+    if (this.player) {
+        send(this.player, {
+            type: "custom_form",
+            title: "§l§aCustom Server Chooser",
+            content: [
+                {
                     "type": "input",
                     "text": "§6Server Address",
-				    "placeholder": "address"
+                "placeholder": "address"
                 },
                 {
                     "type": "input",
                     "text": "§3Server Port",
                     "placeholder": "port"
                 }
-			]
-		}, data => {
+            ]
+        }, data => {
             let playerName = this.player.name;          
             if (data == null) return;
             //if (data == null) executeCommand(`execute ${playerName} ~ ~ ~ selectserver`);
@@ -36,10 +36,10 @@ registerOverride("customserverchooser", [], function () {
                 executeCommand(`transferserver ${playerName} ${address} ${port}`); 
             }
             catch { executeCommand(`tell ${playerName} error`); } 	
-		}
-	);
+        }
+    );
     return null
-  }
+    }
 });
 
 console.log("customServerChooser.js loaded");
