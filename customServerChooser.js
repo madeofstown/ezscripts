@@ -31,7 +31,7 @@ registerOverride("customserverchooser", [], function () {
             if (data == null) return;
             //if (data == null) executeCommand(`execute ${playerName} ~ ~ ~ selectserver`);
             let [address, port] = data;
-            if (data == undefined || data == "") executeCommand(`execute ${playerName} ~ ~ ~ selectserver`);
+            if (data == undefined || data == "") executeCommand(`execute ${playerName} ~ ~ ~ customserverchooser`);
             try { 
                 executeCommand(`transferserver ${playerName} ${address} ${port}`); 
             }
