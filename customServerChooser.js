@@ -18,7 +18,7 @@ registerOverride("customserverchooser", [], function () {
                 {
                     "type": "input",
                     "text": "§6Server Address",
-                "placeholder": "address"
+                    "placeholder": "address"
                 },
                 {
                     "type": "input",
