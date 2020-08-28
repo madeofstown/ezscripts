@@ -23,19 +23,26 @@ registerOverride("customserverchooser", [], function () {
                 {
                     "type": "input",
                     "text": "§3Server Port",
-                    "placeholder": "port"
+                    "placeholder": "19132"
                 }
             ]
         }, data => {
-            let playerName = this.player.name;          
-            if (data == null) return;
-            //if (data == null) executeCommand(`execute ${playerName} ~ ~ ~ selectserver`);
-            let [address, port] = data;
-            if (data == undefined || data == "") executeCommand(`execute ${playerName} ~ ~ ~ customserverchooser`);
-            try { 
-                executeCommand(`transferserver ${playerName} ${address} ${port}`); 
+            let playerName = this.player.name;
+            //if (data == null) return;
+            if (data == null) {
+                executeCommand(`execute ${playerName} ~ ~ ~ selectserver`);
+                return;
             }
-            catch { executeCommand(`tell ${playerName} error`); } 	
+            let [address, port] = data;
+            if (port == null) { port = 19132; }
+            if (address == null || address == "") { executeCommand(`execute ${playerName} ~ ~ ~ customserverchooser`); }
+            else { try {
+                executeCommand(`transferserver ${playerName} ${address} ${port}`);
+                executeCommand(`execute ${playerName} ~ ~ ~ customserverchooser`);
+                console.log(`${playerName} **TRANSFERED TO** ${address}:${port}`);
+            }
+            catch { executeCommand(`tell ${playerName} error`); }
+            }
         }
     );
     return null
