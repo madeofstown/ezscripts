@@ -19,7 +19,7 @@ This demo is meant for people who are running multiple ElementZero instances fro
 
 Place the `activePlayersLoad.js` file in the `/<hubserver>/scripts/` folder.
 
-Edit `activePlayersLoad.js` to point to the proper databases for your other servers and for any other changes you want to make(file is comment). **SCRIPT WILL NOT WORK if not properly edited for your servers!**
+Edit `activePlayersLoad.js` to point to the proper databases for your other servers and for any other changes you want to make(file is commented). **SCRIPT WILL NOT WORK if not properly edited for your servers!**
 
 Edit (or create if missing) `/<hubserver>/scripts/index.js` to include:
 ```
