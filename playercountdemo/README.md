@@ -21,7 +21,7 @@ Place the `activePlayersLoad.js` file in the `/<hubserver>/scripts/` folder.
 
 Edit `activePlayersLoad.js` to point to the proper databases for your other servers and for any other changes you want to make(file is comment). **SCRIPT WILL NOT WORK if not properly edited for your servers!**
 
-Edit (or create if missing) `/<hubserver>/scripts/index.js/` to include:
+Edit (or create if missing) `/<hubserver>/scripts/index.js` to include:
 ```
 import "./activePlayersLoad.js"
 ```
@@ -30,7 +30,7 @@ import "./activePlayersLoad.js"
 
 Place the `activePlayersSave.js` file in the `/<server>/scripts/` folder.
 
-Edit (or create if missing) `/<server>/scripts/index.js/` to include:
+Edit (or create if missing) `/<server>/scripts/index.js` to include:
 ```
 import "./activePlayersSave.js"
 ```
